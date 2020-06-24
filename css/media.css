@@ -1,0 +1,38 @@
+@media (max-width: 591px) {
+
+    .fon {
+        padding: 5vw;
+        box-sizing: border-box;
+    }
+
+    .ground {
+        width: 90vw;
+        height: 90vw;
+    }   
+
+    .fa-times  {
+        font-size: 26vw;
+    padding-top: 1vw;
+    }
+    
+    .fa-circle {
+        font-size: 21vw;
+        padding-top: 3.8vw;
+    }
+}
+
+/* @media (max-width: 460px) {
+    .ground {
+        width: 400px;
+        max-height: 400px;
+    }   
+
+    .block {
+        background-color: seagreen;
+    }
+    .element {
+        height: 115px;
+        width: 50px;
+        background-color: red;
+    }
+} */
