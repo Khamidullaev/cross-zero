@@ -11,6 +11,15 @@ let a = [
     [7, 8, 9]
 ];
 
+let column1 = 0;
+            let column2 = 0;
+            let column3 = 0;
+            let row1 = 0;
+            let row2 = 0;
+            let row3 = 0;
+            let diagonal1 = 0;
+            let diagonal2 = 0;
+
 a[0][0] = document.querySelector('#one');
 a[0][1] = document.querySelector('#two');
 a[0][2] = document.querySelector('#three');
@@ -43,6 +52,7 @@ let win = true;
 for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
         a[i][j].onclick = () => {
+            if(score%2==0&&b[i][j]==0){
             // if (score % 2 == 0 && b[i][j] == 0) {
             //     iks(i, j);
             //     b[i][j] = 2;
@@ -50,14 +60,14 @@ for (let i = 0; i < 3; i++) {
             // } else if (score % 2 == 1 && b[i][j] == 0) {
             //     
             // }
- let column1 = 0;
-            let column2 = 0;
-            let column3 = 0;
-            let row1 = 0;
-            let row2 = 0;
-            let row3 = 0;
-            let diagonal1 = 0;
-            let diagonal2 = 0;
+                column1 = 0;
+             column2 = 0;
+             column3 = 0;
+             row1 = 0;
+             row2 = 0;
+             row3 = 0;
+             diagonal1 = 0;
+             diagonal2 = 0;
 
             iks(i, j);
                 b[i][j] = 2;
@@ -109,30 +119,42 @@ for (let i = 0; i < 3; i++) {
                 console.log(b);}
 
             setTimeout(() => {
+                if(win==true){
+                    if(row1==4||row1==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[0][w]==0) {
+                                console.log(w);
+                                nolik(0, w);
+                                b[0][w]=10;
+                                score ++;
+                            }
+                        }
+                    }
+                    else{ 
                 for (let m=1; m<100; m++) {    
                         let p1 = getRandomIntInclusive(0, 2);
                         let p2 = getRandomIntInclusive(0, 2);
-                        if (b[p1][p2]==0&&win==true) {
+                        if (b[p1][p2]==0) {
                             nolik(p1, p2);
                                 b[p1][p2] = 10;
                                     score++;
                                 console.log(`[${p1}][${p2}]`);
                                 break;
                         }
-                    } 
+                    } }}
 
 //---------------------------------------------------------------------------
 
 
 //---------------------------------------------------------------------------
-let column1 = 0;     
-let column2 = 0;
-let column3 = 0;
-let row1 = 0;
-let row2 = 0;
-let row3 = 0;
-let diagonal1 = 0;
-let diagonal2 = 0;       
+ column1 = 0;     
+ column2 = 0;
+ column3 = 0;
+ row1 = 0;
+ row2 = 0;
+ row3 = 0;
+ diagonal1 = 0;
+ diagonal2 = 0;       
 
 
 
@@ -232,17 +254,17 @@ let diagonal2 = 0;
 
 
 
-
+        }
             }
         }
 }
 
 function iksWin() {
-    alert("X lar g'olib bo'ldi!!!");
+    // alert("X lar g'olib bo'ldi!!!");
 }
 
 function nolikWin() {
-    alert("0 lar g'olib bo'ldi!!!");
+    // alert("0 lar g'olib bo'ldi!!!");
 }
 
 
