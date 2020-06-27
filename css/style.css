@@ -23,6 +23,7 @@ html, body {
     background-image: url(../img/fon2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
 }
 
 .fon {
@@ -38,8 +39,21 @@ html, body {
 
 #fon2 {
     background-color: rgba(0, 0, 0, 0.2);
-
+    justify-content: space-between;
+    padding-top: 10px;
+    box-sizing: border-box;
 }
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 92vh;
+}
+
+
 
 
 
@@ -49,6 +63,8 @@ h1 {
     font-size: 100px;
     letter-spacing: 10px;
     margin-bottom: 30px;
+    padding: 0 30px;
+    text-align: center;
 }
 
 .ground {
@@ -59,6 +75,7 @@ h1 {
     grid-template-rows: 1fr 1fr 1fr;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
+    border: 3px solid silver;
 }
 
 .block {
@@ -135,14 +152,14 @@ h1 {
 }
 
 
-a.start_button {
+a.start_button{
     font-weight: 700;
     color: white;
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
     border-radius: 3px;
     background: rgb(64,199,129);
-    box-shadow: 0 -3px rgb(53,167,110) inset;
+    box-shadow: 0 -3px rgb(156, 196, 176) inset;
     transition: 0.2s;
   } 
   a.start_button:hover { background: rgb(53, 167, 110); }
@@ -152,5 +169,72 @@ a.start_button {
     
   }
 
-  a[ id= "#game1" ]:target ~ #game {
-    transform: translateY( 0px );}
+  .buttonArea {
+      display: flex;
+      width: 200px;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+
+  .button {
+      font-weight: 900;
+      color: black;
+    border-radius: 3px;
+    transition: 0.2s;
+    padding: .8em 1em calc(.8em + 3px);
+  }
+
+  .button, .button:focus {
+     outline: 0;
+  }
+
+  .reset {
+      background-color: darkorange;
+      box-shadow: 0 -3px rgb(133, 73, 1) inset;
+  }
+
+  .reset:hover {
+      cursor: pointer;
+  }
+
+  .reset:active {
+      box-shadow: 0 3px rgb(177, 97, 0) inset;
+  }
+   
+  .back {
+      background-color: red;
+      box-shadow: 0 -3px rgb(139, 0, 0) inset;
+      text-decoration: none;
+  }
+
+  .back:hover {
+      cursor: pointer;
+  }
+
+  .back:active {
+    box-shadow: 0 3px rgb(163, 0, 0) inset;
+  }
+
+  footer {
+      width: 100%;
+      font-size: 25px;
+      border-top: 2px solid black;
+      background-color: silver;
+      color: teal;
+      padding: 2px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Racing Sans One', cursive;
+    }
+
+    .left {
+        padding: 0 10px;
+    }
+
+    .right {
+        padding: 0 10px;
+    }
+
+    footer span {
+        color: darkred;
+    }

@@ -18,20 +18,23 @@
         font-size: 19vw;
         padding-top: 4.76vw;
     }
+
+    h1 {
+        font-size: 70px;
+    }
+
 }
 
-/* @media (max-width: 460px) {
-    .ground {
-        width: 400px;
-        max-height: 400px;
-    }   
-
-    .block {
-        background-color: seagreen;
+@media (max-width: 551px) {
+    footer {
+        font-size: 20px;
+        padding: 4px;
+        
+      }
+}
+@media (max-width: 440px) {
+    .right {
+        display: none;
     }
-    .element {
-        height: 115px;
-        width: 50px;
-        background-color: red;
-    }
-} */
+    
+}

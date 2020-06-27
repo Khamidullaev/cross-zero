@@ -478,3 +478,39 @@ function nolikWin() {
 }
 
 
+document.querySelector('.reset').onclick = () => {
+     b = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+
+    for(let r1=0; r1<3; r1++) {
+        for(let r2=0; r2<3; r2++) {
+            a[r1][r2].classList.remove('far', 'fa-circle', 'fas', 'fa-times');
+            a[r1][r2].style.backgroundColor = 'transparent';
+        }
+    }
+    score = 0;
+    win = true;
+}
+document.querySelector('.back').onclick = () => {
+     b = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+
+    for(let r1=0; r1<3; r1++) {
+        for(let r2=0; r2<3; r2++) {
+            a[r1][r2].classList.remove('far', 'fa-circle', 'fas', 'fa-times');
+            a[r1][r2].style.backgroundColor = 'transparent';
+        }
+    }
+    score = 0;
+    win = true;
+}
+
+
+
+
