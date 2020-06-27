@@ -1,23 +1,22 @@
 @media (max-width: 591px) {
 
     .fon {
-        padding: 5vw;
         box-sizing: border-box;
     }
 
     .ground {
-        width: 90vw;
-        height: 90vw;
+        width: 80vw;
+        height: 80vw;
     }   
 
     .fa-times  {
-        font-size: 26vw;
+        font-size: 23vw;
     padding-top: 1vw;
     }
     
     .fa-circle {
-        font-size: 21vw;
-        padding-top: 3.8vw;
+        font-size: 19vw;
+        padding-top: 4.76vw;
     }
 }
 
