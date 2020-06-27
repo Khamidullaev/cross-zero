@@ -52,7 +52,7 @@ let win = true;
 for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
         a[i][j].onclick = () => {
-            if(score%2==0&&b[i][j]==0){
+            if(score%2==0&&b[i][j]==0&&win==true){
             // if (score % 2 == 0 && b[i][j] == 0) {
             //     iks(i, j);
             //     b[i][j] = 2;
@@ -68,6 +68,7 @@ for (let i = 0; i < 3; i++) {
              row3 = 0;
              diagonal1 = 0;
              diagonal2 = 0;
+             let cornerElement = getRandomIntInclusive(1, 7);
 
             iks(i, j);
                 b[i][j] = 2;
@@ -120,16 +121,223 @@ for (let i = 0; i < 3; i++) {
 
             setTimeout(() => {
                 if(win==true){
-                    if(row1==4||row1==20){
+                   
+                   if(b[1][1]==0) {
+                       nolik(1, 1);
+                       b[1][1]=10;
+                       score ++;
+                   } 
+
+                   else if(row1 == 20 || row2 == 20 || row3 == 20 || column1 == 20 || column2 == 20 || column3 == 20 || diagonal1 == 20 || diagonal2 == 20)
+                    {
+                        if(row1==20){
                         for(let w=0; w<3; w++) {
                             if(b[0][w]==0) {
-                                console.log(w);
                                 nolik(0, w);
                                 b[0][w]=10;
                                 score ++;
                             }
                         }
                     }
+                    else if(row2==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[1][w]==0) {
+                                nolik(1, w);
+                                b[1][w]=10;
+                                score ++;
+                            }
+                        }
+                    }
+                    else if(row3==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[2][w]==0) {
+                                nolik(2, w);
+                                b[2][w]=10;
+                                score ++;
+                            }
+                        }
+                    }
+                    else if(column1==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[w][0]==0) {
+                                nolik(w, 0);
+                                b[w][0]=10;
+                                score ++;
+                            }
+                        }
+                    }
+                    else if(column2==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[w][1]==0) {
+                                nolik(w, 1);
+                                b[w][1]=10;
+                                score ++;
+                            }
+                        }
+                    }
+                    else if(column3==20){
+                        for(let w=0; w<3; w++) {
+                            if(b[w][2]==0) {
+                                nolik(w, 2);
+                                b[w][2]=10;
+                                score ++;
+                            }
+                        }
+                    }
+
+                    else if(diagonal1==20) {
+                        for(let w=0; w<3; w++) {
+                            if(b[w][w]==0) {
+                                nolik(w, w);
+                                b[w][w]=10;
+                                score++;
+                            }
+                        }
+                    }
+
+                    else if(diagonal2==20) {
+                        for(let w1=0; w1<3; w1++) {
+                            for(let w2=0; w2<3; w2++){
+                                if(b[w1][w2]==0&&w1+w2==2) {
+                                    nolik(w1, w2);
+                                b[w1][w2]=10;
+                                score++;
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }
+//-------------------------------------------------------------------
+else if(row1 == 4 || row2 == 4 || row3 == 4 || column1 == 4 || column2 == 4 || column3 == 4 || diagonal1 == 4 || diagonal2 == 4)
+{
+                        if(row1==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[0][w]==0) {
+                                    nolik(0, w);
+                                    b[0][w]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+                        else if(row2==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[1][w]==0) {
+                                    nolik(1, w);
+                                    b[1][w]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+                        else if(row3==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[2][w]==0) {
+                                    nolik(2, w);
+                                    b[2][w]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+                        else if(column1==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[w][0]==0) {
+                                    nolik(w, 0);
+                                    b[w][0]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+                        else if(column2==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[w][1]==0) {
+                                    nolik(w, 1);
+                                    b[w][1]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+                        else if(column3==4){
+                            for(let w=0; w<3; w++) {
+                                if(b[w][2]==0) {
+                                    nolik(w, 2);
+                                    b[w][2]=10;
+                                    score ++;
+                                }
+                            }
+                        }
+
+                        else if(diagonal1==4) {
+                            for(let w=0; w<3; w++) {
+                                if(b[w][w]==0) {
+                                    nolik(w, w);
+                                    b[w][w]=10;
+                                    score++;
+                                }
+                            }
+                        }
+    
+                        else if(diagonal2==4) {
+                            for(let w1=0; w1<3; w1++) {
+                                for(let w2=0; w2<3; w2++){
+                                    if(b[w1][w2]==0&&w1+w2==2) {
+                                        nolik(w1, w2);
+                                    b[w1][w2]=10;
+                                    score++;
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
+
+
+
+
+                    // if(row1 == 4 || row2 == 4 || row3 == 4 || column1 == 4 || column2 == 4 || column3 == 4 || diagonal1 == 4 || diagonal2 == 4||row1 == 20 || row2 == 20 || row3 == 20 || column1 == 20 || column2 == 20 || column3 == 20 || diagonal1 == 20 || diagonal2 == 20)
+                    // { for(let u=0; u<3; u++) {
+                    //         if((row1==4||row1==20)&&b[0][u]==0) {
+                    //             nolik(0, u);
+                    //             b[0][u]=10;
+                    //             score++;
+                    //             break;
+                    //         }
+                    // }}
+
+
+                   
+                    
+                else if((b[0][0]==0||b[0][2]||b[2][0]==0||b[2][2]==0)&&cornerElement<=1&&score<3) {
+                    for(let n=0; n<50; n++) {
+                        let numberOfCorner = getRandomIntInclusive(1, 4);
+                        if(numberOfCorner==1&&b[0][0]==0) {
+                            nolik(0, 0);
+                            b[0][0]=10;
+                            score ++;
+                            break;
+                        } 
+                        if(numberOfCorner==2&&b[0][2]==0) {
+                            nolik(0, 2);
+                            b[0][2]=10;
+                            score ++;
+                            break;
+                        } 
+                        if(numberOfCorner==3&&b[2][0]==0) {
+                            nolik(2, 0);
+                            b[2][0]=10;
+                            score ++;
+                            break;
+                        } 
+                        if(numberOfCorner==4&&b[2][2]==0) {
+                            nolik(2, 2);
+                            b[2][2]=10;
+                            score ++;
+                            break;
+                        } 
+                    }
+                }
+                    
                     else{ 
                 for (let m=1; m<100; m++) {    
                         let p1 = getRandomIntInclusive(0, 2);
@@ -196,9 +404,11 @@ for (let i = 0; i < 3; i++) {
 
             if (row1 == 6 || row2 == 6 || row3 == 6 || column1 == 6 || column2 == 6 || column3 == 6 || diagonal1 == 6 || diagonal2 == 6) 
                 {iksWin();
+                    win=false;
                 }
             if (row1 == 30 || row2 == 30 || row3 == 30 || column1 == 30 || column2 == 30 || column3 == 30 || diagonal1 == 30 || diagonal2 == 30) 
                 {nolikWin();
+                    win=false;
                     }
             
             if (row1 == 6 || row1 == 30) {

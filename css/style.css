@@ -5,6 +5,8 @@
 
 body {
    overflow: hidden;
+   height: 100%;
+   width: 100%;
 }
 
 .background-image {
@@ -28,16 +30,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+}
+
+#fon2 {
+    background-color: rgba(0, 0, 0, 0.2);
 
 }
 
 
 
 h1 {
-    font-family: 'Freckle Face', cursive;
+    font-family: 'Racing Sans One', cursive;
     color: white;
-    font-size: 50px;
+    font-size: 100px;
     letter-spacing: 10px;
+    margin-bottom: 30px;
 }
 
 .ground {
