@@ -226,6 +226,8 @@ a.start_button{
       display: flex;
       justify-content: space-between;
       font-family: 'Racing Sans One', cursive;
+      height: 8vh;
+      box-sizing: border-box;
     }
 
     .left {
@@ -243,6 +245,7 @@ a.start_button{
 
     .soundButton {
         background-color: green;
+        
         font-size: 20px;
         padding: 7px;
         border-radius: 100%;
