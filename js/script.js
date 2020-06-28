@@ -3,7 +3,7 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
-
+let sound = 0;
 let audioElement = document.querySelector('audio');
 let a = [
     [1, 2, 3],
@@ -513,10 +513,10 @@ document.querySelector('.back').onclick = () => {
 }
 
 document.querySelector('.start_button').onclick = () => {
-    audioElement.setAttribute('src', 'music/backgroundMusic.mp3');
+    if(sound%2==0) audioElement.setAttribute('src', 'music/backgroundMusic.mp3');
 }
 
-let sound = 0;
+
 let soundIcon = document.querySelector('#soundIcon');
 
 
