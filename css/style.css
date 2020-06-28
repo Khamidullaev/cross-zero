@@ -51,6 +51,7 @@ html, body {
     align-items: center;
     width: 100%;
     height: 92vh;
+    position: relative;
 }
 
 
@@ -237,4 +238,16 @@ a.start_button{
 
     footer span {
         color: darkred;
+    }
+
+
+    .soundButton {
+        background-color: green;
+        font-size: 20px;
+        padding: 7px;
+        border-radius: 100%;
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        border: 1px solid silver;
     }

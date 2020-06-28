@@ -4,7 +4,7 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
 
-
+let audioElement = document.querySelector('audio');
 let a = [
     [1, 2, 3],
     [4, 5, 6],
@@ -412,50 +412,50 @@ else if(row1 == 4 || row2 == 4 || row3 == 4 || column1 == 4 || column2 == 4 || c
                     }
             
             if (row1 == 6 || row1 == 30) {
-                one.style.backgroundColor = 'darkslategrey';
-                two.style.backgroundColor = 'darkslategrey';
-                three.style.backgroundColor = 'darkslategrey';
+                one.style.backgroundColor = 'slateblue';
+                two.style.backgroundColor = 'slateblue';
+                three.style.backgroundColor = 'slateblue';
             }
 
             if (row2 == 6 || row2 == 30) {
-                four.style.backgroundColor = 'darkslategrey';
-                five.style.backgroundColor = 'darkslategrey';
-                six.style.backgroundColor = 'darkslategrey';
+                four.style.backgroundColor = 'slateblue';
+                five.style.backgroundColor = 'slateblue';
+                six.style.backgroundColor = 'slateblue';
             }
 
             if (row3 == 6 || row3 == 30) {
-                seven.style.backgroundColor = 'darkslategrey';
-                eight.style.backgroundColor = 'darkslategrey';
-                nine.style.backgroundColor = 'darkslategrey';
+                seven.style.backgroundColor = 'slateblue';
+                eight.style.backgroundColor = 'slateblue';
+                nine.style.backgroundColor = 'slateblue';
             }
 
             if (column1 == 6 || column1 == 30) {
-                one.style.backgroundColor = 'darkslategrey';
-                four.style.backgroundColor = 'darkslategrey';
-                seven.style.backgroundColor = 'darkslategrey';
+                one.style.backgroundColor = 'slateblue';
+                four.style.backgroundColor = 'slateblue';
+                seven.style.backgroundColor = 'slateblue';
             }
 
             if (column2 == 6 || column2 == 30) {
-                two.style.backgroundColor = 'darkslategrey';
-                five.style.backgroundColor = 'darkslategrey';
-                eight.style.backgroundColor = 'darkslategrey';
+                two.style.backgroundColor = 'slateblue';
+                five.style.backgroundColor = 'slateblue';
+                eight.style.backgroundColor = 'slateblue';
             }
 
             if (column3 == 6 || column3 == 30) {
-                three.style.backgroundColor = 'darkslategrey';
-                six.style.backgroundColor = 'darkslategrey';
-                nine.style.backgroundColor = 'darkslategrey';
+                three.style.backgroundColor = 'slateblue';
+                six.style.backgroundColor = 'slateblue';
+                nine.style.backgroundColor = 'slateblue';
             }
 
             if (diagonal1 == 6 || diagonal1 == 30) {
-                one.style.backgroundColor = 'darkslategrey';
-                five.style.backgroundColor = 'darkslategrey';
-                nine.style.backgroundColor = 'darkslategrey';
+                one.style.backgroundColor = 'slateblue';
+                five.style.backgroundColor = 'slateblue';
+                nine.style.backgroundColor = 'slateblue';
             }
             if (diagonal2 == 6 || diagonal2 == 30) {
-                three.style.backgroundColor = 'darkslategrey';
-                five.style.backgroundColor = 'darkslategrey';
-                seven.style.backgroundColor = 'darkslategrey';
+                three.style.backgroundColor = 'slateblue';
+                five.style.backgroundColor = 'slateblue';
+                seven.style.backgroundColor = 'slateblue';
             }
             if (score == 9 && column1 != 6 && column1 != 30 && column2 != 6 && column2 != 30 && column3 != 6 && column3 != 30 && row1 != 6 && row1 != 30 && row2 != 6 && row2 != 30 && row3 != 6 && row3 != 30 && diagonal1 != 6 && diagonal1 != 30 && diagonal2 != 6 && diagonal2 != 30) 
                 alert('Durang!');
@@ -509,6 +509,30 @@ document.querySelector('.back').onclick = () => {
     }
     score = 0;
     win = true;
+    audioElement.setAttribute('src', 'asdasd');
+}
+
+document.querySelector('.start_button').onclick = () => {
+    audioElement.setAttribute('src', 'music/backgroundMusic.mp3');
+}
+
+let sound = 0;
+let soundIcon = document.querySelector('#soundIcon');
+
+
+document.querySelector('.soundButton').onclick = () => {
+    if(sound%2==0) {
+        audioElement.setAttribute('src', 'asdasd');
+        soundIcon.classList.remove('fa-volume-up');
+        soundIcon.classList.add('fa-volume-mute');
+    }
+    else {
+        audioElement.setAttribute('src', 'music/backgroundMusic.mp3');
+        soundIcon.classList.remove('fa-volume-mute');
+        soundIcon.classList.add('fa-volume-up');
+    }
+
+    sound ++;
 }
 
 
